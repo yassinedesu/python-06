@@ -1,7 +1,6 @@
 """Alembic 3: uses 'from ... import ...' to access alchemy/elements.py."""
 
-from alchemy.elements import create_air  # copies create_air into local scope
-
+from alchemy.elements import create_air
 
 def main() -> None:
     """Run the alembic 3 experiment."""

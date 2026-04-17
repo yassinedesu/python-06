@@ -4,8 +4,8 @@ Demonstrates mixing absolute imports (for root elements.py) and
 relative imports (for alchemy/elements.py).
 """
 
-import elements  # absolute: root elements.py — fire and water
-from .elements import create_earth, create_air  # relative: alchemy elements
+import elements
+from .elements import create_earth, create_air
 
 
 def healing_potion() -> str:

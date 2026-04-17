@@ -1,6 +1,6 @@
 """Alembic 5: uses 'from alchemy import ...' to access the package."""
 
-from alchemy import create_air  # import a name exposed by __init__.py
+from alchemy import create_air
 
 
 def main() -> None:
