@@ -1,15 +1,13 @@
 """Dark spellbook: intentionally creates a circular dependency.
 
 WARNING: Importing this module will raise ImportError.
-This is intentional — it demonstrates what circular imports look like
-and why they must be avoided in real code.
-
-The cycle: dark_spellbook imports dark_validator (top-level),
-dark_validator imports dark_spellbook (top-level) → explosion.
+This is intentional — it demonstrates what circular imports look like.
 """
 
-
-from .dark_validator import validate_ingredients
+# This top-level import loads dark_validator.py, which immediately tries
+# to import dark_spell_allowed_ingredients from THIS file — which hasn't
+# been defined yet because we're still on this line. Crash guaranteed.
+from .dark_validator import validate_ingredients  # noqa: F811
 
 
 def dark_spell_allowed_ingredients() -> list[str]:

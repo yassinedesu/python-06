@@ -1,11 +1,7 @@
-"""Alchemy potions module: brews potions using all four elements.
+"""Alchemy potions module: brews potions using all four elements."""
 
-Demonstrates mixing absolute imports (for root elements.py) and
-relative imports (for alchemy/elements.py).
-"""
-
-import elements
-from .elements import create_earth, create_air
+import elements  # absolute: root elements.py — fire and water
+from .elements import create_earth, create_air  # relative: alchemy elements
 
 
 def healing_potion() -> str:

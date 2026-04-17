@@ -1,11 +1,6 @@
-"""Dark ingredient validator: intentionally causes a circular import.
+"""Dark ingredient validator: intentionally causes a circular import."""
 
-WARNING: The top-level import of dark_spell_allowed_ingredients creates
-a circular dependency with dark_spellbook.py. This module exists solely
-to demonstrate what a circular import failure looks like at runtime.
-"""
-
-
+# This top-level import creates the circular dependency with dark_spellbook.py.
 from .dark_spellbook import dark_spell_allowed_ingredients
 
 
@@ -22,8 +17,6 @@ def validate_ingredients(ingredients: str) -> str:
     """
     allowed: list[str] = dark_spell_allowed_ingredients()
     lower_ingredients: str = ingredients.lower()
-    is_valid: bool = any(
-        item in lower_ingredients for item in allowed
-    )
+    is_valid: bool = any(item in lower_ingredients for item in allowed)
     keyword: str = "VALID" if is_valid else "INVALID"
     return f"{ingredients} - {keyword}"

@@ -1,10 +1,6 @@
-"""Transmutation 2: accesses lead_to_gold purely through import alchemy.
+"""Transmutation 2: accesses lead_to_gold purely through import alchemy."""
 
-lead_to_gold is accessible because alchemy/__init__.py imports it from
-alchemy.transmutation, which in turn gets it from recipes.py.
-"""
-
-import alchemy 
+import alchemy
 
 
 def main() -> None:

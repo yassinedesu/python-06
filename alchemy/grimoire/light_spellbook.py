@@ -1,9 +1,4 @@
-"""Light spellbook: records light magic spells with validation.
-
-Imports validate_ingredients from light_validator at module level.
-This works without circular dependency because light_validator
-does NOT import from this module at module level (it uses a late import).
-"""
+"""Light spellbook: records light magic spells with validation."""
 
 from .light_validator import validate_ingredients
 
@@ -28,7 +23,7 @@ def light_spell_record(spell_name: str, ingredients: str) -> str:
         str: Confirmation the spell was recorded, or a rejection message.
     """
     validation_result: str = validate_ingredients(ingredients)
-
+    # Check INVALID before VALID to avoid matching 'VALID' inside 'INVALID'
     if "INVALID" in validation_result:
         return f"Spell rejected: {spell_name} ({validation_result})"
     return f"Spell recorded: {spell_name} ({validation_result})"

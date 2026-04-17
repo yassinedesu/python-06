@@ -2,6 +2,7 @@
 
 from alchemy.elements import create_air
 
+
 def main() -> None:
     """Run the alembic 3 experiment."""
     print("=== Alembic 3 ===")
